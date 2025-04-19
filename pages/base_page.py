@@ -10,6 +10,6 @@ class BasePage:
         self.wait = WebDriverWait(self.driver, 10, 1)
 
     def open(self):
-        self.driver.get(self.PAGE_URL)
+        self.driver.get(self._PAGE_URL)
 
     # TODO Добавить общие для всех страниц методы
