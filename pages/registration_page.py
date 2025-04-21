@@ -1,7 +1,7 @@
-from pages.base_page import BasePage
+from base.base_page import BasePage
 
 from selenium.webdriver.support.select import Select
-from selenium.webdriver.support import expected_conditions as EC
+
 
 
 class RegistrationPage(BasePage):
@@ -23,44 +23,43 @@ class RegistrationPage(BasePage):
     _SUCCESS_REGISTRATION_MESSAGE = ("xpath", "//div[@class='ossn-message-done']")
 
     def enter_first_name(self, first_name):
-        self.driver.find_element(*self._FIRST_NAME_FIELD).send_keys(first_name)
+        self.enter_text(self._FIRST_NAME_FIELD, first_name)
 
     def enter_last_name(self, last_name):
-        self.driver.find_element(*self._LAST_NAME_FIELD).send_keys(last_name)
+        self.enter_text(self._LAST_NAME_FIELD, last_name)
 
     def enter_email(self, email):
-        self.driver.find_element(*self._EMAIL_FIELD).send_keys(email)
+        self.enter_text(self._EMAIL_FIELD, email)
 
     def re_enter_email(self, email):
-        self.driver.find_element(*self._RE_ENTER_EMAIL_FIELD).send_keys(email)
+        self.enter_text(self._RE_ENTER_EMAIL_FIELD, email)
 
     def enter_username(self, username):
-        self.driver.find_element(*self._USERNAME_FIELD).send_keys(username)
+        self.enter_text(self._USERNAME_FIELD, username)
 
     def enter_password(self, password):
-        self.driver.find_element(*self._PASSWORD_FIELD).send_keys(password)
+        self.enter_text(self._PASSWORD_FIELD, password)
 
     def choose_birthdate(self, day, month, year):
-        self.driver.find_element(*self._BIRTHDATE_FIELD).click()
+        self.click(self._BIRTHDATE_FIELD)
         Select(self.driver.find_element(*self._YEAR_DROPDOWN)).select_by_value(str(year))
         Select(self.driver.find_element(*self._MONTH_DROPDOWN)).select_by_value(str(month - 1))
-        self.driver.find_element("xpath", f"//a[text()='{day}']").click()
+        self.click(("xpath", f"//a[text()='{day}']"))
+        # self.driver.find_element("xpath", f"//a[text()='{day}']").click()
 
     def choose_gender(self, gender):
         if gender == 'male':
-            self.driver.find_element(*self._GENDER_CHECKBOX_MALE).click()
+            self.click(self._GENDER_CHECKBOX_MALE)
         elif gender == 'female':
-            self.driver.find_element(*self._GENDER_CHECKBOX_FEMALE).click()
+            self.click(self._GENDER_CHECKBOX_FEMALE)
         else:
             raise ValueError("There's no such gender")
 
     def agree_with_gdpr(self):
-        self.driver.find_element(*self._GDPR_AGREEMENT_CHECKBOX).click()
+        self.click(self._GDPR_AGREEMENT_CHECKBOX)
 
     def click_on_create_an_account_button(self):
-        self.driver.find_element(*self._CREATE_AN_ACCOUNT_BUTTON).click()
+        self.click(self._CREATE_AN_ACCOUNT_BUTTON)
 
     def is_success_message_visible(self):
-        self.wait.until(EC.visibility_of_element_located(self._SUCCESS_REGISTRATION_MESSAGE),
-                        "There's no message about successful registration")
-        return self.driver.find_element(*self._SUCCESS_REGISTRATION_MESSAGE).is_displayed()
+        return self.find_element(self._SUCCESS_REGISTRATION_MESSAGE).is_displayed()

@@ -1,10 +1,7 @@
-from pages.registration_page import RegistrationPage
+from base.base_test import BaseTest
 
 
-class TestRegistrationPage:
-
-    def setup_method(self):
-        self.registration_page = RegistrationPage(self.driver)
+class TestRegistrationPage(BaseTest):
 
     def test_registration_of_an_account(self):
         self.registration_page.open()
