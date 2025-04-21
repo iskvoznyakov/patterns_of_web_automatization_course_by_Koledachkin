@@ -4,9 +4,9 @@ from base.base_page import BasePage
 class HomePage(BasePage):
     _PAGE_URL = "https://demo.opensource-socialnetwork.org/home"
 
-    _POST_FIELD = ("xpath", "//textarea[@name='post']")
-    _POST_BUTTON = ("xpath", "//input[@value='Post']")
-    _RECENTLY_PUBLISHED_POST = ("xpath", "//div[@post='new']")
+    _POST_FIELD = "//textarea[@name='post']"
+    _POST_BUTTON = "//input[@value='Post']"
+    _RECENTLY_PUBLISHED_POST = "//div[@post='new']"
 
     def create_post(self, text):
         self.enter_text(self._POST_FIELD, text)
