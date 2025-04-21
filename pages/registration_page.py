@@ -7,20 +7,20 @@ from selenium.webdriver.support.select import Select
 class RegistrationPage(BasePage):
     _PAGE_URL = "https://demo.opensource-socialnetwork.org/"
 
-    _FIRST_NAME_FIELD = ("xpath", "//input[@name='firstname']")
-    _LAST_NAME_FIELD = ("xpath", "//input[@name='lastname']")
-    _EMAIL_FIELD = ("xpath", "//input[@name='email']")
-    _RE_ENTER_EMAIL_FIELD = ("xpath", "//input[@name='email_re']")
-    _USERNAME_FIELD = ("xpath", "//input[@name='username']")
-    _PASSWORD_FIELD = ("xpath", "//input[@name='password']")
-    _BIRTHDATE_FIELD = ("xpath", "//input[@name='birthdate']")
-    _YEAR_DROPDOWN = ("xpath", "//select[@class='ui-datepicker-year']")
-    _MONTH_DROPDOWN = ("xpath", "//select[@class='ui-datepicker-month']")
-    _GENDER_CHECKBOX_MALE = ("xpath", "//input[@name='gender' and @value='male']")
-    _GENDER_CHECKBOX_FEMALE = ("xpath", "//input[@name='gender' and @value='female']")
-    _GDPR_AGREEMENT_CHECKBOX = ("xpath", "//input[@name='gdpr_agree']")
-    _CREATE_AN_ACCOUNT_BUTTON = ("xpath", "//input[@value='Create an account']")
-    _SUCCESS_REGISTRATION_MESSAGE = ("xpath", "//div[@class='ossn-message-done']")
+    _FIRST_NAME_FIELD = "//input[@name='firstname']"
+    _LAST_NAME_FIELD = "//input[@name='lastname']"
+    _EMAIL_FIELD = "//input[@name='email']"
+    _RE_ENTER_EMAIL_FIELD = "//input[@name='email_re']"
+    _USERNAME_FIELD = "//input[@name='username']"
+    _PASSWORD_FIELD = "//input[@name='password']"
+    _BIRTHDATE_FIELD = "//input[@name='birthdate']"
+    _YEAR_DROPDOWN = "//select[@class='ui-datepicker-year']"
+    _MONTH_DROPDOWN = "//select[@class='ui-datepicker-month']"
+    _GENDER_CHECKBOX_MALE = "//input[@name='gender' and @value='male']"
+    _GENDER_CHECKBOX_FEMALE = "//input[@name='gender' and @value='female']"
+    _GDPR_AGREEMENT_CHECKBOX = "//input[@name='gdpr_agree']"
+    _CREATE_AN_ACCOUNT_BUTTON = "//input[@value='Create an account']"
+    _SUCCESS_REGISTRATION_MESSAGE = "//div[@class='ossn-message-done']"
 
     def enter_first_name(self, first_name):
         self.enter_text(self._FIRST_NAME_FIELD, first_name)

@@ -4,10 +4,10 @@ from base.base_page import BasePage
 class LoginPage(BasePage):
     _PAGE_URL = "https://demo.opensource-socialnetwork.org/login"
 
-    _USERNAME_FIELD = ("xpath", "//input[@name='username']")
-    _PASSWORD_FIELD = ("xpath", "//input[@name='password']")
-    _LOGIN_BUTTON = ("xpath", "//input[@value='Login']")
-    _ERROR_MESSAGE = ("xpath", "//div[contains(@class, 'alert-danger')]")
+    _USERNAME_FIELD = "//input[@name='username']"
+    _PASSWORD_FIELD = "//input[@name='password']"
+    _LOGIN_BUTTON = "//input[@value='Login']"
+    _ERROR_MESSAGE = "//div[contains(@class, 'alert-danger')]"
 
     def enter_login(self, username):
         self.enter_text(self._USERNAME_FIELD, username)

@@ -2,8 +2,10 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
+from metaclasses.meta_locator import MetaLocator
 
-class BasePage:
+
+class BasePage(metaclass=MetaLocator):
     # TODO Добавить общие для всех страниц локаторы
 
     def __init__(self, driver):
