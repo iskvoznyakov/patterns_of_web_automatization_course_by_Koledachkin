@@ -2,6 +2,7 @@ import pytest
 import allure
 from base.base_test import BaseTest
 
+
 @allure.epic("Users")
 @allure.feature("User Interactions")
 @allure.story("Login & Posts")

@@ -1,6 +1,7 @@
 from base.base_test import BaseTest
 import allure
 
+
 @allure.epic("Users")
 @allure.feature("User Interactions")
 @allure.story("Registration")
