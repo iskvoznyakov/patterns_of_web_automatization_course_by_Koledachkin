@@ -1,8 +1,13 @@
 from base.base_test import BaseTest
+import allure
 
 
+@allure.epic("Users")
+@allure.feature("User Interactions")
+@allure.story("Registration")
 class TestRegistrationPage(BaseTest):
 
+    @allure.title("Registration of a trial account")
     def test_registration_of_an_account(self):
         self.registration_page.open()
         self.registration_page.enter_first_name("Ivan")
