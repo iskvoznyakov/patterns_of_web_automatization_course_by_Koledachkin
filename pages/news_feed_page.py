@@ -9,7 +9,7 @@ class HomePage(BasePage):
     _POST_BUTTON = "//input[@value='Post']"
     _RECENTLY_PUBLISHED_POST = "//div[@post='new']"
 
-    @allure.step("Create post")
+    @allure.step("Create a post")
     def create_post(self, text):
         self.enter_text(self._POST_FIELD, text)
         self.click(self._POST_BUTTON)
