@@ -28,3 +28,11 @@ class LoginPage(BasePage):
     @allure.step("Check if the error message is visibile")
     def is_error_message_visible(self):
         return self.find_element(self._ERROR_MESSAGE).is_displayed()
+
+    @allure.step("Login in an account")
+    def login_as(self, username, password):
+        self.enter_text(self._USERNAME_FIELD, username)
+        self.enter_text(self._PASSWORD_FIELD, password)
+        allure.attach(body=self.driver.get_screenshot_as_png(), name="Filled form before login",
+                      attachment_type=allure.attachment_type.PNG)
+        self.click(self._LOGIN_BUTTON)
