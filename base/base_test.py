@@ -1,6 +1,6 @@
 from data.credentials import Credentials
 from pages.login_page import LoginPage
-from pages.news_feed_page import HomePage
+from pages.home_page.home_page import HomePage
 from pages.registration_page import RegistrationPage
 
 
