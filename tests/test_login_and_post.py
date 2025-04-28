@@ -16,8 +16,8 @@ class TestLoginAndHomePages(BaseTest):
         self.login_page.enter_password(self.data.EXISTING_PASSWORD)
         self.login_page.click_login_button()
 
-        self.home_page.create_post(text)
-        assert self.home_page.is_post_published(text)
+        self.home_page.posts.create_post(text)
+        assert self.home_page.posts.is_post_published(text)
 
     @allure.title("Invalid login in with wrong credentials")
     def test_invalid_login(self):

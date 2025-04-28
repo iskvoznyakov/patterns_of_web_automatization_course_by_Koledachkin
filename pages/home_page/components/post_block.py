@@ -1,10 +1,9 @@
-from base.base_page import BasePage
 import allure
 
+from base.base_page import BasePage
 
-class HomePage(BasePage):
-    _PAGE_URL = "https://demo.opensource-socialnetwork.org/home"
 
+class PostBlock(BasePage):
     _POST_FIELD = "//textarea[@name='post']"
     _POST_BUTTON = "//input[@value='Post']"
     _RECENTLY_PUBLISHED_POST = "//div[@post='new']"
